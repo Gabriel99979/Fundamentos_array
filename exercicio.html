@@ -1,0 +1,31 @@
+<body>
+    <script>
+        let nomes = [];
+        let notas = [];
+        for(let i = 0;i < 2;i++){
+            nomes.push(prompt('Digite a nome do aluno: ').trim());
+            notas.push(prompt('Digite a nota do aluno: ').trim());
+        }
+        let aluno = [nomes, notas];
+
+
+
+        function exibeNotaNome(nome){
+            let [nomes, notas] = aluno;
+            if(nomes.includes(nome)){
+                let indice = nomes.indexOf(nome);
+                if(notas[indice]){
+                    console.log(`O aluno ${nome} tem média ${notas[indice]}`)
+                } else {
+                    console.log(`Média não encontrada para ${nome}`);
+                }
+            } else {
+                console.log(`O nome ${nome} não foi encontrado no sistema`);
+            }
+
+        }
+
+        let nome = prompt('Qual nome deseja procurar: ');
+        exibeNotaNome(nome);
+    </script>
+</body>
